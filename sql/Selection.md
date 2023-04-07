@@ -1,6 +1,7 @@
 
-## Section 5: Refining SELECTion
-**1. DISTINCT: find the distinct row of a column**
+## SELECT
+**1. DISTINCT:**
+find the distinct row of a column
 ```sql
 SELECT DISTINCT colname FROM tablename;
 SELECT DISTINCT colname1, colname2 FROM tablename;

@@ -1,4 +1,4 @@
-## Section 1: Creating databases and tables
+## Databases 
 
 **Create databases:**
 ```sql
@@ -26,16 +26,9 @@ VARCHAR(string_length)
 2. Integer:
 INT
 
+## Tables
 **Create my own table:**
-```sql
-CREAT TABLE table_name
-(
-col_name data_type,
-col_name data_type
-);
-```
 
-Example of create table:
 ```sql
 CREATE TABLE cats (
   name VARCHAR(100),

@@ -91,3 +91,38 @@ SHOW TRIGGERS;
 ```sql
 DROP TRIGGER trigger_name;
 ```
+## The SQL UNION Operator
+The UNION operator is used to combine the result-set of two or more SELECT statements.
+
+Notice that each SELECT statement within the UNION must have the same number of columns.
+
+The columns must also have similar data types. Also, the columns in each SELECT statement must
+be in the same order.
+```sql
+SELECT column_name(s) FROM table_name1
+UNION
+SELECT column_name(s) FROM table_name2
+```
+>Note: The UNION operator selects only distinct values by default. To allow duplicate values, use UNION ALL.
+```SQL
+SELECT column_name(s) FROM table_name1
+UNION ALL
+SELECT column_name(s) FROM table_name2
+```
+PS: The column names in the result-set
+
+## SELECT INTO
+The SELECT INTO statement selects data from one table and inserts it into a different table.
+The SELECT INTO statement is most often used to create backup copies of tables.
+
+```java
+We can select all columns into the new table:
+SELECT *
+INTO new_table_name [IN externaldatabase]
+FROM old_tablename
+
+Or we can select only the columns we want into the new table:
+SELECT column_name(s)
+INTO new_table_name [IN externaldatabase]
+FROM old_tablename
+```

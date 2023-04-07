@@ -139,6 +139,8 @@ SELECT user_id AS id, username as name FROM Employees;
 
 ### Update
 **UPDATE : modify the existing records in a table.**
+Note: Notice the WHERE clause in the UPDATE syntax. The WHERE clause specifies which record
+or records that should be updated. If you omit the WHERE clause, all records will be updated!
 ```sql
 UPDATE tablename SET colvalue=NewValue 
 WHERE colname=specifiedValue;
@@ -146,6 +148,18 @@ WHERE colname=specifiedValue;
 
 ### Delete
 **DELETE: delete existing records in a table.**
+Note: Notice the WHERE clause in the DELETE syntax. The WHERE clause specifies which record or
+records that should be deleted. If you omit the WHERE clause, all records will be deleted!
 ```sql
 DELETE FROM tablename WHERE condition=TRUE;
+```
+
+## Delete All Rows
+It is possible to delete all rows in a table without deleting the table. This means that the table
+structure, attributes, and indexes will be intact:
+
+```sql
+DELETE FROM table_name
+or
+DELETE * FROM table_name
 ```

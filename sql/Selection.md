@@ -9,6 +9,10 @@ SELECT DISTINCT colname1, colname2 FROM tablename;
 
 **2. ORDER BY:** <br>
 sort results (ascending default)
+The ORDER BY keyword is used to sort the result-set by a specified column.
+The ORDER BY keyword sort the records in ascending order by default.
+If you want to sort the records in a descending order, you can use the DESC keyword.
+
 ```sql
 SELECT colname FROM tablename ORDER BY colname; 
 
@@ -18,7 +22,8 @@ SELECT colname FROM tablename ORDER BY 1; -- sort by column 1
 
 SELECT colname FROM tablename ORDER BY col1, col2; -- sort by multiple  columns
 ```
-**3. LIMIT: limit response length**
+**3. LIMIT:**<br>
+limit response length
 ```sql
 SELECT colname FROM tablename LIMIT 5; -- limit reponse to 5 rows
 

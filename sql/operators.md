@@ -92,6 +92,17 @@ FROM tablename
 NOT WHERE colanme1 
 BETWEEN value1 AND value2;
 ```
+Note: The BETWEEN operator is treated differently in different databases!
+
+In some databases, persons with the LastName of "Hansen" or "Pettersen" will not be listed,
+because the BETWEEN operator only selects fields that are between and excluding the test values.
+
+In other databases, persons with the LastName of "Hansen" or "Pettersen" will be listed, because
+the BETWEEN operator selects fields that are between and including the test values.
+
+And in other databases, persons with the LastName of "Hansen" will be listed, but "Pettersen" will
+not be listed (like the example above), because the BETWEEN operator selects fields between the test values, including the first test value and excluding the last test value.
+Therefore: Check how your database treats the BETWEEN operator.
 
 **6. IN and NOT IN**
 ```sql

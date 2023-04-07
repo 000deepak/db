@@ -1,4 +1,16 @@
 **4. JOINs**
+
+## SQL INNER JOIN Keyword
+The INNER JOIN keyword return rows when there is at least one match in both tables.
+```sql
+SELECT column_name(s)
+FROM table_name1
+INNER JOIN table_name2
+ON table_name1.column_name=table_name2.column_name
+```
+PS: INNER JOIN is the same as JOIN.
+
+
 1. Cross Join:
 Cross join produces a result set which is the number of rows in the first table multiplied by the number of rows in the second table if no WHERE clause is used along with CROSS JOIN.This kind of result is called as Cartesian Product.
 ```sql

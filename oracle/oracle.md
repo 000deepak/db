@@ -51,9 +51,8 @@ SELECT first_name FROM employees ORDER BY first_name;
 ## Limit
 ```sql
 SELECT first_name FROM employees LIMIT 1;
-```
-## 11g
-```sql
+
+-- 11g
 SELECT first_name FROM employees where rownum <2;
 ```
 ## Like

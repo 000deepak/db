@@ -18,6 +18,8 @@ SELECT COUNT(DISTINCT colname) FORM tablename; -- count distinct row of a column
     - It's often used with aggregate functions like SUM, COUNT, AVG, etc., to perform calculations on grouped data.
 - HAVING: 
     - After grouping the data, sometimes you want to filter the groups based on aggregated values. That's where HAVING comes in. It allows you to specify conditions that the grouped rows must meet. In our example, we filtered out categories with a total revenue less than or equal to 10,000.
+
+> Note : apply aggregate functions like SUM, COUNT, AVG, etc., to the columns that are not in the GROUP BY clause Other wise we will get error.    
 ```sql
 SELECT Category, SUM(Revenue) AS TotalRevenue
 FROM Sales

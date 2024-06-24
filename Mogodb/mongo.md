@@ -1,5 +1,3 @@
-
-
 ## datatypes
 - String 
 	- This is the most commonly used datatype to store the data. String in MongoDB must be UTF-8 valid.
@@ -186,41 +184,26 @@ db.myCollection1.insert(
 		}
 	]
 )
+```
 
-BulkWriteResults ({ "writeErrors": [] . })
+## BulkWriteResults
+- this object encapsulates the result of a bulk write operation, which can include multiple operations like inserts, updates, deletes, or a combination of these.
+```js
+    // Define an array of documents to insert
+    const documents = [
+      { name: 'Alice', age: 30 },
+      { name: 'Bob', age: 25 },
+      { name: 'Charlie', age: 35 }
+    ];
+
+    // Perform the bulk write operation
+    const bulkWriteResult = await collection.bulkWrite([
+      { insertOne: { document: documents[0] } },
+      { insertOne: { document: documents[1] } },
+      { insertOne: { document: documents[2] } }
+    ]);
 db.myCollection1.find().pretty();
 ```
-
-- big example
-```js
-db.myCollection1.insert([
-   {
-	  title: 'MongoDB Overview', 
-	  description: 'MongoDB is no sql database',
-	  by: 'tutorials point',
-	  url: 'http://www.myCollection1.com',
-	  tags: ['mongodb', 'database', 'NoSQL'],
-	  likes: 100
-   },	
-   {
-	  title: 'NoSQL Database', 
-	  description: 'NoSQL database doesnt have tables',
-	  by: 'tutorials point',
-	  url: 'http://www.myCollection1.com',
-	  tags: ['mongodb', 'database', 'NoSQL'],
-	  likes: 20, 
-	  comments: [	
-		 {
-			user:'user1',
-			message: 'My first comment',
-			dateCreated: new Date(2013,11,10,2,35),
-			like: 0 
-		 }
-	  ]
-   }
-])
-```
-
 
 ## update for  update full/part feilds
 - update 

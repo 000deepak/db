@@ -699,13 +699,13 @@ Use it to measure the time taken to execute a query.
 ```js
 db.products.createIndex({ field: 1 });
 
-(1) řor storing indexes in ascending order.
+(1) for storing indexes in ascending order.
 
-(-1) řor storing indexes in descending order.
+(-1) for storing indexes in descending order.
 
 db.collection.getIndexes();
 
-_id is a deřault index.
+_id is a default index.
 
 db.collection.dropIndex({ field: 1 });
 
@@ -721,7 +721,7 @@ db.collection.createIndex({ field: "text" });
 
 db.collection.find({ $text: { $search: "keyword" } });
 
-Searching using index is řaster than   $regex searching.
+Searching using index is faster than   $regex searching.
 
 db.products.find({ field: { $regex: "air" } })
 ```
@@ -736,6 +736,7 @@ db.products.find({ field: { $regex: "air" } })
 ### Indexing Small Collections
 - In smaller collections, the cost of index maintenance might outweigh the benefits gained from querying.
 
+
 # Aggregation in MongoDB
 ### What is Aggregation?
 **Definition:** Aggregation is the process of performing transformations on documents and combining them to produce computed results.
@@ -748,9 +749,9 @@ db.products.find({ field: { $regex: "air" } })
 
 ### $match
 ```js
-The $match stage is similar to the query used as the řirst argument in .řind(). It řilters 
+The $match stage is similar to the query used as the first argument in .find(). It filters 
 documents based on
-speciřied conditions.
+specified conditions.
 Syntax
 { $match: { <query> } }
 Example
@@ -761,7 +762,7 @@ db.products.aggregate([
 
 ### $group
 ```js
-The $group stage groups documents by speciřied řields and perřorms aggregate operations on grouped 
+The $group stage groups documents by specified fields and performs aggregate operations on grouped 
 data
 {
 $group:
@@ -774,7 +775,7 @@ _id: <expression>, // Group key
 db.products.aggregate([
 { $group: { _id: { comp: "$company" }, totalProducts: { $sum: 1 } } }
 ]);
-This groups products by company and calculates the total number oř products řor each company.
+This groups products by company and calculates the total number of products for each company.
 The $group stage can calculate various aggregate values within grouped data.
 db.products.aggregate([
 { $group: {
@@ -796,19 +797,19 @@ db.products.aggregate([
 
 ### $project
 ```js
-The $project stage reshapes documents, includes or excludes řields, and perřorms operations on 
-řields.
+The $project stage reshapes documents, includes or excludes fields, and performs operations on 
+fields.
 { $project: { <field1>: <expression1>, ... } }
 db.products.aggregate([
 { $project: { name: 1, discountedPrice: { $subtract: ["$price", 5] } } }
 ]);
-Projects the name řield and calculates a discountedPrice řield by subtracting 5 řrom the price.
-$sum, $subtract, $multiply, $avg, etc. are types oř expression operator.
+Projects the name field and calculates a discountedPrice field by subtracting 5 from the price.
+$sum, $subtract, $multiply, $avg, etc. are types of expression operator.
 ```
 
 ### $push
 ```js
-The $push stage adds elements to an array řield within documents.
+The $push stage adds elements to an array field within documents.
 { $push: <expression> }
 db.products.aggregate([
 { $group: { _id: { company: "$company" }, products: { $push: "$name" } } }
@@ -817,20 +818,20 @@ db.products.aggregate([
 
 ### $unwind
 ```js
-The $unwind stage deconstructs an array řield and produces multiple documents.
+The $unwind stage deconstructs an array field and produces multiple documents.
 { $unwind: <array> }
 db.products.aggregate([
 { $unwind: "$colors" },
 { $group: { _id: { company: "$company" }, products: { $push: "$colors" } } }
 ]);
-Deconstructs the colors array řield, groups products by company, and creates an array oř colors řor 
+Deconstructs the colors array field, groups products by company, and creates an array of colors for 
 each
 company.
 ```
 
 ### $addToSet
 ```js
-The $addToSet stage adds elements to an array řield while preventing duplicates.
+The $addToSet stage adds elements to an array field while preventing duplicates.
 db.products.aggregate([
 { $unwind: "$colors" },
 { $group: {
@@ -838,22 +839,22 @@ _id: { company: "$company" },
 products: { $addToSet: "$colors" }
 } }
 ])
-Groups products by company and creates an array oř unique colors řor each company.
+Groups products by company and creates an array of unique colors for each company.
 ```
 
 ### $size
 ```js
-The $size stage calculates the length oř an array řield.
+The $size stage calculates the length of an array field.
 { $size: <array> }
 db.products.aggregate([
 { $project: { name: 1, numberOfColors: { $size: "$colors" } } }
 ]);
-Projects the name řield and calculates the number oř colors in the colors array.
+Projects the name field and calculates the number of colors in the colors array.
 ```
 
 ### $limit and $skip
 ```js
-The $limit and $skip stages are useřul řor pagination, limiting, and skipping results.
+The $limit and $skip stages are useful for pagination, limiting, and skipping results.
 {   $limit: <positive integer> }
 db.products.aggregate([
 { $skip: 10 },
@@ -863,7 +864,7 @@ db.products.aggregate([
 
 ### $filter
 ```js
-The $řilter stage řilters elements oř an array based on speciřied conditions.
+The $filter stage filters elements of an array based on specified conditions.
 
 $project: {
   <field>: {
@@ -878,7 +879,7 @@ $project: {
                          
 ### $addFields
 ```js
-The $addFields stage adds new řields to documents in a cleaner way compared to $project.
+The $addFields stage adds new fields to documents in a cleaner way compared to $project.
 { $addFields: { <field1>: <expression1>, ... } }
 db.products.aggregate([
 { $addFields: { discountedPrice: { $subtract: ["$price", 5] } } }

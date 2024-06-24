@@ -32,11 +32,6 @@
 - Regular expression 
 	- This datatype is used to store regular expression.
 
-
-
-
-
-
 # MongoDB Structure
 - **Database** (like SQL databases)
 - **Collections** (like SQL tables)
@@ -58,128 +53,115 @@
   - Grant permission to DB
   - Grant permission to DB/Collection
 
----------------------------------
 
 # shell commands
 - Run the below at command prompt/ terminal
-`cmd`
+```shell
+cmd
+```
 
 - start mongo client
-`mongo`
+```shell
+mongo
 
 db.stats();
 db.help();
+```
 
-- db        
-	- always means currently selected db
-
-- 'test' is default database
-
-
-
-- ------------
-
-
-
+## db        
+- always means currently selected db
 - list all databases
+```shell
 show dbs
-- NOTE: assume one of the databases is myDatabase1
-
-
-
+```
 - use the 'myDatabase1' database
+```shell
 use myDatabase1
+```
 
-- ------------
+## collections/ tables
+```js
+- db.createCollection("myCollection1")
+- db.createCollection(name, options); 
+//- options about memory size and indexing
 
-
-
-- collections/ tables
-
-db.createCollection("myCollection1")
-
-- db.createCollection('myCollection1');
-- db.createCollection(name, options); - options about memory size and indexing
 - db.createCollection("myCollection1", { capped : true, autoIndexId : true, size : 6142800, max : 10000 } )
-//
-//	Field		Type	Description
-//	capped		Boolean	(Optional) If true, enables a capped collection. Capped collection is a fixed size collection that automatically overwrites its oldest entries when it reaches its maximum size. If you specify true, you need to specify size parameter also.
-//	autoIndexId	Boolean	(Optional) If true, automatically create index on _id field.s Default value is false.
-//	size			number	(Optional) Specifies a maximum size in bytes for a capped collection. If capped is true, then you need to specify this field also.
-//	max			number	(Optional) Specifies the maximum number of documents allowed in the capped collection.
 
-
-- Limiting a CAPPED collection to 2 MB
+//Limiting a CAPPED collection to 2 MB
+//that is, older documents are deleted when collection exceeds 2 MB data
 db.createCollection(’logs’, {capped: true, size: 2097152})
-- that is, older documents are deleted when collection exceeds 2 MB data
+```
 
-- to get what all commands exists for 'myCollection1' collection
+| Field       | Type    | Description            |
+|-------------|---------|---------------------------------------|
+| capped      | Boolean | (Optional) If true, enables a capped collection. Capped collection is a fixed size collection that automatically overwrites its oldest entries when it reaches its maximum size. If you specify true, you need to specify size parameter also. |
+| autoIndexId | Boolean | (Optional) If true, automatically create index on `_id` field. Default value is false.                                                                            |
+| size        | number  | (Optional) Specifies a maximum size in bytes for a capped collection. If `capped` is true, then you need to specify this field also.                              |
+| max         | number  | (Optional) Specifies the maximum number of documents allowed in the capped collection.                                                                            |
+
+```js
+//to get what all commands exists for 'myCollection1' collection
 db.myCollection1.help();
 
-
-- show all collections of 'myDatabase1' database
+//show all collections of 'myDatabase1' database
 show collections
-- NOTE: assume one of the collections is 'myCollection1'
 
 db.getCollectionNames();
-- db.getCollection('myCollection1');
 
-- ------------
-
+db.getCollection('myCollection1');
 
 
-- show all documents of 'myCollection1' collection
+//show all documents of 'myCollection1' collection
 db.myCollection1.find()
-- db.getCollection('myCollection1').find({})
+db.getCollection('myCollection1').find({})
 
--
-- NODE.JS CODE
--
-- ------- find all
-- dbo    .collection("customers")    .find(query, projection)    .limit(limit)    .toArray(function(err, result) {
-- 	if (err) throw err;
-- 	console.log(result);
-- 	db.close();
-- });
-- 
-- ------- find one
-- dbo    .collection("customers")    .findOne(query, projection)    .limit(limit)    .toArray(function(err, result) {
-- 	if (err) throw err;
-- 	console.log(result);
-- 	db.close();
-- });
+//find all
+dbo.collection("customers")    
+.find(query, projection)    
+.limit(limit)    
+.toArray(function(err, result) {
+ 	if (err) throw err;
+	console.log(result);
+	db.close();
+});
+
+//find one
+dbo.collection("customers")    
+.findOne(query, projection)    
+.limit(limit)    
+.toArray(function(err, result) {
+ 	if (err) throw err;
+ 	console.log(result);
+ 	db.close();
+});
 
 
-- keys
+//keys
 Object.keys(db.myCollection1.findOne());
 
-- values
+//values
 db.myCollection1.find().forEach(function(doc) {
 	for (field in doc) {
 		print(doc[field]);
 	}
 });
 
-- ------------
-
-
-- print documents pretty
+//print documents pretty
 db.myCollection1.find().pretty()
 
-- same as above
+//same as above
 db.myCollection1.find().forEach(function(doc) {
 	printjson(doc);
 });	
-
-
-
-
-
+```
 
 ## insert 
 ```js
-db.myCollection1.insert({"name" : "myCollection1"})  - creates collection automatically, when you insert some document.
-db.myCollection1.insert({"name":"author 1"})  - insert at least one document
+// creates collection automatically, when you insert some document.
+db.myCollection1.insert({"name" : "myCollection1"})  
+
+// insert at least one document
+db.myCollection1.insert({"name":"author 1"})  
 db.myCollection1.insert({"title":"author 1 1"})
 db.myCollection1.insert({"title":"author 1 2"})
 db.myCollection1.insert({"title":"author 1 3"})
@@ -240,9 +222,6 @@ db.myCollection1.insert([
 ```
 
 
-
-
-	
 ## update for  update full/part feilds
 - update 
 	- replace				

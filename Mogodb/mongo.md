@@ -10,7 +10,7 @@
 			take defaults (Next, Next,  Finish)
 
 			
-- check if exists - server 
+    check if exists - server 
 		mongod
 			MongoDB server version: 4.0.0
 			MongoDB shell version v4.0.0
@@ -22,153 +22,133 @@
 				local   0.000GB
 
 		
-- check if exists - client
-			mongo
-				show dbs;
-				exit;
+    check if exists - client
+		mongo
+			show dbs;
+			exit;
 
 
 	NOTE:
 		Data directory		C:\Program Files\MongoDB\Server\4.0\data\
 		Log  directory		C:\Program Files\MongoDB\Server\4.0\log\
 
-		3 setup types:
-			Standalone MongoDB instance             https://docs.mongodb.com/manual/reference/program/mongod/
-						MongoDB replica set          https://docs.mongodb.com/manual/replication/
-						MongoDB sharded clusters     https://docs.mongodb.com/manual/sharding/
+## 3 setup types:
+- Standalone MongoDB instance             https://docs.mongodb.com/manual/reference/program/mongod/
+- MongoDB replica set          https://docs.mongodb.com/manual/replication/
+- MongoDB sharded clusters     https://docs.mongodb.com/manual/sharding/
 
-- MongoDB supports many datatypes. Some of them are −//
-- 	https://www.myCollection1.com/mongodb/mongodb_datatype.htm
-- String - This is the most commonly used datatype to store the data. String in MongoDB must be UTF-8 valid.
-- Integer - This type is used to store a numerical value. Integer can be 32 bit or 64 bit depending upon your server.
-- Boolean - This type is used to store a boolean (true/ false) value.
-- Double - This type is used to store floating point values.
-- Min/ Max keys - This type is used to compare a value against the lowest and highest BSON elements.
-- Arrays - This type is used to store arrays or list or multiple values into one key.
-- Timestamp - ctimestamp. This can be handy for recording when a document has been modified or added.
-- Object - This datatype is used for embedded documents.
-- Null - This type is used to store a Null value.
-- Symbol - This datatype is used identically to a string; however, it's generally reserved for languages that use a specific symbol type.
-- Date - This datatype is used to store the current date or time in UNIX time format. You can specify your own date time by creating object of Date and passing day, month, year into it.
-- Object ID - This datatype is used to store the document’s ID.
-- Binary data - This datatype is used to store binary data.
-- Code - This datatype is used to store JavaScript code into the document.
-- Regular expression - This datatype is used to store regular expression.
-
-
-
-#2
-mongodb
-	server is
-		mongod
-	client (official) are
-		mongo
-			starts the mongodb shell, to connect to above server
-		mongodb compass
-			SQL IDE/ UI, to connect to above server
-
----------------------------------
-How to configure your mongodb server so that it can be accessed, from another machine
-
-	Below error comes up when we access local mongodb server, from a mongodb client on remote machine
-		"Error: MongoDB not running on the provided host and port"
-	Go here:
-		https://stackoverflow.com/a/51718461/984471
+## datatypes
+- String 
+	- This is the most commonly used datatype to store the data. String in MongoDB must be UTF-8 valid.
+- Integer 
+	- This type is used to store a numerical value. Integer can be 32 bit or 64 bit depending upon your server.
+- Boolean 
+	- This type is used to store a boolean (true/ false) value.
+- Double 
+	- This type is used to store floating point values.
+- Min/ Max keys 
+	- This type is used to compare a value against the lowest and highest BSON elements.
+- Arrays 
+	- This type is used to store arrays or list or multiple values into one key.
+- Timestamp 
+	- ctimestamp. This can be handy for recording when a document has been modified or added.
+- Object 
+	- This datatype is used for embedded documents.
+- Null 
+	- This type is used to store a Null value.
+- Symbol 
+	- This datatype is used identically to a string; however, it's generally reserved for languages that use a specific symbol type.
+- Date 
+	- This datatype is used to store the current date or time in UNIX time format. You can specify your own date time by creating object of Date and passing day, month, year into it.
+- Object ID 
+	- This datatype is used to store the document’s ID.
+- Binary data 
+	- This datatype is used to store binary data.
+- Code 
+	- This datatype is used to store JavaScript code into the document.
+- Regular expression 
+	- This datatype is used to store regular expression.
 
 
----------------------------------
 
-List of mongo db clients
+## 2
+	mongodb
+		server is
+			mongod
+		client (official) are
+			mongo
+				starts the mongodb shell, to connect to above server
+			mongodb compass
+				SQL IDE/ UI, to connect to above server
 
-2018 Jul
+## How to configure your mongodb server so that it can be accessed, from another machine
+- Below error comes up when we access local mongodb server, from a mongodb client on remote machine
+- "Error: MongoDB not running on the provided host and port"
+- Go here: https://stackoverflow.com/a/51718461/984471
 
-free & opensource
-    active
-		mongo						shell
-        mongo-express                Latest commit c3c94bd  5 days ago        https://github.com/mongo-express/mongo-express         Web-based MongoDB admin interface, written with Node.js and express
-        nosqlclient (mongoclient)    Latest commit b1b65ba  8 days ago        https://github.com/nosqlclient/nosqlclient    
-    inactive
-        mongodb admin tool for php   Latest commit 4b1a16e  on 14 May 2017    https://github.com/MongoDB-Rox/phpMoAdmin-MongoDB-Admin-Tool-for-PHP                                
-        edda                         Latest commit 5acaf99  on 25 Oct 2016    https://github.com/mongodb-labs/edda    A log visualizer for MongoDB
-        rockmongo                    Latest commit 939017a  on 19 Sep 2015    https://github.com/iwind/rockmongo            
-        mongo explorer               Latest commit fc85825  on 17 Mar 2015    https://github.com/tutikka/MongoExplorer    Cross-platform database management tool for MongoDB
-        mongodb sharding visualizer  Latest commit a54bbc4  on 26 Nov 2014    https://github.com/mongodb-labs/shard-viz    https://www.mongodb.com/blog/post/mongodb-sharding-visualizer    
-        umongo                       Latest commit 44dfa90  on 20 Jun 2014    https://github.com/agirbal/umongo            
-        genghis                      Latest commit 717910d  on 20 Mar 2014    https://github.com/bobthecow/genghis/        http://genghisapp.com
-        mongohub ** mac only         Latest commit accf03b  on 19 Apr 2015    https://github.com/jeromelebel/MongoHub-Mac    
 
-free & commercial
-    active
-        free
-            robo 3t (robomongo)      https://robomongo.org
-            clustercontrol           https://severalnines.com/pricing        https://github.com/severalnines/docker
-        commercial
-            studio 3t - full         https://studio3t.com
-            mongo management studio  http://mms.litixsoft.de
-            mongodb compass          https://github.com/mongodb/docs-compass https://www.mongodb.com/products/compass
-            mongobooster             https://nosqlbooster.com/compareEditions
+## List of mongo db clients
+| Category           | Status  | Tool Name                        | Latest Commit      | GitHub Repository                                         | Description                                                                                      |
+|--------------------|---------|----------------------------------|--------------------|-----------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| **free & opensource** | **active** | mongo shell                      | -                  | -                                                         | -                                                                                                |
+|                    |         | mongo-express                    | Latest commit c3c94bd 5 days ago | [mongo-express](https://github.com/mongo-express/mongo-express) | Web-based MongoDB admin interface, written with Node.js and express                          |
+|                    |         | nosqlclient (mongoclient)        | Latest commit b1b65ba 8 days ago | [nosqlclient](https://github.com/nosqlclient/nosqlclient)  | -                                                                                                |
+| **inactive**          |         | mongodb admin tool for php       | Latest commit 4b1a16e on 14 May 2017 | [phpMoAdmin-MongoDB-Admin-Tool-for-PHP](https://github.com/MongoDB-Rox/phpMoAdmin-MongoDB-Admin-Tool-for-PHP) | -                                                                                                |
+|                    |         | edda                             | Latest commit 5acaf99 on 25 Oct 2016 | [edda](https://github.com/mongodb-labs/edda)               | A log visualizer for MongoDB                                                                    |
+|                    |         | rockmongo                        | Latest commit 939017a on 19 Sep 2015 | [rockmongo](https://github.com/iwind/rockmongo)             | -                                                                                                |
+|                    |         | mongo explorer                   | Latest commit fc85825 on 17 Mar 2015 | [MongoExplorer](https://github.com/tutikka/MongoExplorer)  | Cross-platform database management tool for MongoDB                                            |
+|                    |         | mongodb sharding visualizer      | Latest commit a54bbc4 on 26 Nov 2014 | [shard-viz](https://github.com/mongodb-labs/shard-viz)     | [MongoDB sharding visualizer](https://www.mongodb.com/blog/post/mongodb-sharding-visualizer)   |
+|                    |         | umongo                           | Latest commit 44dfa90 on 20 Jun 2014 | [umongo](https://github.com/agirbal/umongo)                | -                                                                                                |
+|                    |         | genghis                          | Latest commit 717910d on 20 Mar 2014 | [genghis](https://github.com/bobthecow/genghis/)            | [Genghis](http://genghisapp.com)                                                                |
+|                    |         | mongohub **mac only**            | Latest commit accf03b on 19 Apr 2015 | [MongoHub-Mac](https://github.com/jeromelebel/MongoHub-Mac) | -                                                                                                |
+| **free & commercial** | **active** | robo 3t (robomongo)              | -                  | [Robo 3T](https://robomongo.org)                            | -                                                                                                |
+|                    |         | clustercontrol                   | -                  | [clustercontrol](https://github.com/severalnines/docker)    | -                                                                                                |
+| **commercial**        |         | studio 3t - full                 | -                  | [studio 3t](https://studio3t.com)                           | -                                                                                                |
+|                    |         | mongo management studio          | -                  | [mms.litixsoft.de](http://mms.litixsoft.de)                 | -                                                                                                |
+|                    |         | mongodb compass                  | -                  | [docs-compass](https://github.com/mongodb/docs-compass)     | [MongoDB Compass](https://www.mongodb.com/products/compass)                                    |
+|                    |         | mongobooster                     | -                  | [nosqlbooster](https://nosqlbooster.com/compareEditions)    | -                                                                                                |
+| **commercial only**  | **active** | nosql manager                    | -                  | [mongodbmanager](http://mongodb-tools.com/tool/mongodbmanager/) | -                                                                                                |
+|                    |         | nucleon database manager         | -                  | [nucleon-database-manager](https://www.g2crowd.com/products/nucleon-database-manager/details) | [Database Master](http://nucleonsoftware.com/products/database-master)                        |
+| **inactive**          |         | mongojs query analyzer           | -                  | [dbspecific/mongodb_client](https://www.aquafold.com/dbspecific/mongodb_client) | -                                                                                                |
+|                    |         | mongovue                         | -                  | [mongovue](http://www.mongovue.com)                        | -                                                                                                |
 
-commercial only
-    active
-        nosql manager                http://mongodb-tools.com/tool/mongodbmanager/
-        nucleon database manager     https://www.g2crowd.com/products/nucleon-database-manager/details    http://nucleonsoftware.com/products/database-master
-        inactive
-        mongojs query analyzer       https://www.aquafold.com/dbspecific/mongodb_client
-    inactive
-        mongovue                     http://www.mongovue.com
 
----------------------------------
 
-mongodb structure
-. 
-.database (like sql databases)
-. collections (like sql tables)
-.   documents (like sql rows)
-. views (like sql views)
-. transactions (commit/abort)
-. package
-. 	store proc	<----------------------------------
-. 	function	<----------------------------------
-.
-. nodejs example to mongodb
-.
-. constaints on fields
-. trigger
-. index
-. cursors
-. users
-. 	updateUser
-. 		grant access to db
-. 		grant access to db/collection
-. 		grant roles
-. 		grant permission to db
-. 		grant permission to db/collection
-. archival
-. purge
-. 
+# MongoDB Structure
+- **Database** (like SQL databases)
+- **Collections** (like SQL tables)
+  - **Documents** (like SQL rows)
+- **Views** (like SQL views)
+- **Transactions** (commit/abort)
+- **Package**
+  - **Stored Procedures** (*store proc*)
+  - **Functions**
+- Constraints on Fields
+- Trigger
+- Index
+- Cursors
 
-https://www.tutorialsjar.com/mongodb-index-tutorial/
-https://docs.mongodb.com/stitch/mongodb/triggers/
-https://docs.mongodb.com/manual/faq/fundamentals/
-https://docs.mongodb.com/manual/core/server-side-javascript/
-https://stackoverflow.com/questions/9691316/how-to-listen-for-changes-to-a-mongodb-collection
-
+## Users
+  - Grant access to DB
+  - Grant access to DB/Collection
+  - Grant roles
+  - Grant permission to DB
+  - Grant permission to DB/Collection
 
 ---------------------------------
 
 # shell commands
 - Run the below at command prompt/ terminal
-cmd
+`cmd`
 
 - start mongo client
-mongo
-
-- ------------
+`mongo`
 
 db.stats();
 db.help();
 
-- db        - always means currently selected db
+- db        
+	- always means currently selected db
 
 - 'test' is default database
 
@@ -273,10 +253,9 @@ db.myCollection1.find().forEach(function(doc) {
 
 
 
-- ------------ insert ------------
-
+## insert 
+```js
 db.myCollection1.insert({"name" : "myCollection1"})  - creates collection automatically, when you insert some document.
-
 db.myCollection1.insert({"name":"author 1"})  - insert at least one document
 db.myCollection1.insert({"title":"author 1 1"})
 db.myCollection1.insert({"title":"author 1 2"})
@@ -286,8 +265,8 @@ db.myCollection1.insert({
 	firstName: "fn1",
 	lastName: "ln1"
 })
-db.myCollection1.find().pretty();
 
+db.myCollection1.find().pretty();
 
 db.myCollection1.insert(
 	[
@@ -302,11 +281,13 @@ db.myCollection1.insert(
 		}
 	]
 )
-- 		BulkWriteResults ({ "writeErrors": [] . })
-db.myCollection1.find().pretty();
 
+BulkWriteResults ({ "writeErrors": [] . })
+db.myCollection1.find().pretty();
+```
 
 - big example
+```js
 db.myCollection1.insert([
    {
 	  title: 'MongoDB Overview', 
@@ -333,66 +314,110 @@ db.myCollection1.insert([
 	  ]
    }
 ])
-
+```
 
 
 
 
 	
-- ------------ update for  update full/part feilds ------------
-- update - replace				- match1 - way1 - overwrite doc - must give all existing field + new field
+## update for  update full/part feilds
+- update 
+	- replace				
+		- match1 
+		- way1 
+		- overwrite doc 
+		- `must give all existing field + new field`
+```js
 db.myCollection1.update(
 	{firstName: "fn1"},
 	{firstName: "fn1", lastName:"hello"}
 );
-//
+```
 
-- update - replace multiple fields	- match1 - way1 - overwrite doc - must give all existing field + new field
+- update 
+	- replace multiple fields	
+	- match1 
+	- way1 
+	- overwrite doc 
+	- `must give all existing field + new field`
+```js	
 db.myCollection1.update(
 {firstName: "fn1"},
 {firstName: "fn1", lastName:"hello", gender:"male"}
 );
-//
+```
 
-- update - set (insert key)					- match1 - way2 - add/modify field - $set: {} - give only insert field
+- update 
+	- set (insert key)					
+	- match1 
+	- way2 
+	- add/modify field 
+	- $set: {} 
+	- `give only insert field`
+```js	
 db.myCollection1.update(
 {firstName: "fn1"},
 {$set: {score:44}}
 );
-//
+```
 
-- update - set (update key)
+- update 
+	- set (update key)
+```js		
 db.myCollection1.update(
 {firstName: "fn1"},
 {$set: {score:5}}
 );
+```
 
-- update - inc (increment key)		- increment by 5 - give updated only field(s)
+- update 
+	- inc (increment key)		
+	- increment by 5 
+	- `give updated only field(s)`
+```js		
 db.myCollection1.update(
 {firstName: "fn1"},
 {$inc: {score:5}}
 );
+```
 
-- update - unset (remove key)		- match1 - remove field - $unset: {} - give only new field
+- update 
+	- unset (remove key)		
+	- match1 
+	- remove field 
+	- $unset: {} 
+	- `give only new field`
+```js		
 db.myCollection1.update(
 {firstName: "fn1"},
 {$unset: {score:1}}
 );
+```
 
-- update - unset (remove key) - same as above
+- update 
+	- unset (remove key) 
+	- same as above
+```js	
 db.myCollection1.update(
 {firstName: "fn1"},
 {$unset: {score:0}}
 );
+```
 
-- update - insert/update = upsert
+- update 
+	- insert/update 
+	- upsert
+```js	
 db.myCollection1.update(
 {firstName: "fn1"},
 {firstName: "fn1", lastName: "lnnn"},
 {upsert: true}
 );
+```
 
-- update - rename
+- update 
+	- rename
+```js	
 db.myCollection1.update(
 {firstName: "fn1"},
 {$rename: {score: score2}}
@@ -403,62 +428,83 @@ db.myCollection1.update({'_id':ObjectId("598aea8feb8b4de45c012fc8")},{$set:{'tit
 db.myCollection1.update(
 {'firstName':'fn1'},
 {$set:{'title':'New MongoDB Tutorial'}},
-{multi:true}        - to update multiple documents, set a parameter 'multi' to true
+{multi:true}        //- to update multiple documents, set a parameter 'multi' to true
 )
+```
 
 - replace
-- db.myCollection1.save(
-- 	{
-- 	  "_id" : ObjectId("598aea8feb8b4de45c012fc8"),
-- 	   "title":"11 author 1 New Topic",
-- 		 "by":"author 1"
-- 	}
-- )
-
-
-
+```js	
+db.myCollection1.save(
+ 	{
+ 	  "_id" : ObjectId("598aea8feb8b4de45c012fc8"),
+ 	   "title":"11 author 1 New Topic",
+ 		 "by":"author 1"
+ 	}
+)
+```
 
 - remove all document of something
-
-
-- db.myCollection1.remove(
-- {firstName: "fn1"}
-- );
-
+```js	
+ db.myCollection1.remove(
+ {firstName: "fn1"}
+);
+```
 
 - remove 1st document
+```js	
 db.myCollection1.remove(
 {firstName: "fn1"},
 {justOne: true}
 );
 
-
 - db.myCollection1.remove(ObjectId("598aea8feb8b4de45c012fc8"))
 - db.myCollection1.remove({'title':'NoSQL Database'})
-- db.myCollection1.remove({'title':'New MongoDB Tutorial 2'}, 1) - delete only the first record
-- db.myCollection1.remove({});    - Remove All Documents from a Collection - https://docs.mongodb.com/manual/reference/method/db.collection.remove/
-- db.myCollection1.remove({}); - remove all
-- https://docs.mongodb.com/manual/reference/method/db.collection.remove/
 
+//- delete only the first record
+- db.myCollection1.remove({'title':'New MongoDB Tutorial 2'}, 1) 
 
-- find
+//Remove All Documents from a Collection
+- db.myCollection1.remove({}); 
+
+//remove all
+- db.myCollection1.remove({}); 
+```
+
+## find
+
+```js
 - db.collection.find(query, projection)
-db.myCollection1.find() - print all
+db.myCollection1.find() 
+//- print all
+
 - db.myCollection1.find({});
-- db.myCollection1.find({},{"title":1})           - _id field is displayed, even without selecting it with 1
-- db.myCollection1.find({},{_id:0, "title":1})    - _id field is now not displayed
+
+- db.myCollection1.find({},{"title":1})           
+//- _id field is displayed, even without selecting it with 1
+
+- db.myCollection1.find({},{_id:0, "title":1})    
+//- _id field is now not displayed
+
 - db.myCollection1.find({"title" : "MongoDB Overview"})
 - db.myCollection1.find({"title" : "MongoDB Overview"}).pretty()
 - db.myCollection1.find({"likes":{$gte:20}}).pretty()
 - db.myCollection1.find({"likes":{$gt:20}}).pretty()
 - db.myCollection1.find({"by": "title1"}).pretty()	
-db.myCollection1.find({},{"title":1,_id:0}).limit(2)            - limit to 1st 2 documents
-db.myCollection1.find({},{"title":1,_id:0}).limit(2).skip(0)    - limit to 2, dont skip any - same as above - default value in skip() method is 0
-db.myCollection1.find({},{"title":1,_id:0}).limit(1).skip(1)    - limit to 1, after skipping 1 - that is, print from 2nd document
+
+db.myCollection1.find({},{"title":1,_id:0}).limit(2)            
+//- limit to 1st 2 documents
+
+db.myCollection1.find({},{"title":1,_id:0}).limit(2).skip(0)    
+//- limit to 2, dont skip any - same as above - default value in skip() method is 0
+
+db.myCollection1.find({},{"title":1,_id:0}).limit(1).skip(1)    
+//- limit to 1, after skipping 1 - that is, print from 2nd document
+
+
 db.myCollection1.find();
 db.myCollection1.find({},{"title":1,_id:0}).sort({"title":1})
 db.myCollection1.find({},{"title":1,_id:0}).sort({"title":-1})
-
+```
 
 | Operation           | Syntax                | Example                                                  | RDBMS Equivalent           |
 |---------------------|-----------------------|----------------------------------------------------------|----------------------------|
@@ -471,6 +517,7 @@ db.myCollection1.find({},{"title":1,_id:0}).sort({"title":-1})
 
 
 - find with $or: []
+```js
 db.myCollection1.find(
 	{
 		$or: [
@@ -479,8 +526,10 @@ db.myCollection1.find(
 		]
 	}
 );
+```
 
 - find with $and: []
+```js
 db.myCollection1.find(
    {
 	  $and: [
@@ -492,10 +541,12 @@ db.myCollection1.find(
 		]
    }
 ).pretty()
+```
 
 
 
 - find with $gt:nnn
+```js
 db.myCollection1.find(
 {
 	age:{
@@ -503,66 +554,85 @@ db.myCollection1.find(
 	}
 }
 );
-//
+```
 
-- find within an object ("obj1.field1": '') - NOTE: double quotes for object is must
+- find within an object ("obj1.field1": '') 
+> NOTE: double quotes for object is must
+```js
 db.myCollection1.find(
 {
 	"address.city": "boston"
 }
 );
-//
+```
 
-- find within an array ("array1": 'arrayval1') - NOTE: double quotes for object is must
+- find within an array ("array1": 'arrayval1') 
+>NOTE: double quotes for object is must
+```js
 db.myCollection1.find(
 {
 	"array1": "arrayval1"
 }
 );
-//
+```
 
-- find - sort ascending - by a field
+- find 
+	- sort ascending 
+	- by a field
+```js
 db.myCollection1.find().sort(
 {"firstName": 1}
 );
-//
+```
 
-- find - sort descending - by a field
+- find 
+	- sort descending 
+	- by a field
+```js
 db.myCollection1.find().sort(
 {"firstName": -1}
 );
-//
+```
 
-- find - count()
+- find 
+	- count()
+```js
 db.myCollection1.find().count();
-//
+```
 
-- find - limit(nnn) - 1st nnn
+- find 
+	- limit(nnn) 
+	- 1st nnn
+```js
 db.myCollection1.find().limit(4)
-//
+```
 
-- find - limit(nnn) 1st nnn - sort
-db.myCollection1.find().limit(4).sort(
-{"firstName": 1}
-);
-//
+- find 
+	- limit(nnn) 1st nnn 
+	- sort
+```js
+db.myCollection1.find().limit(4).sort({"firstName": 1});
+```
 
 
-- find - limit(nnn) 1st nnn - sort
+- find 
+	- limit(nnn) 1st nnn 
+	- sort
+```js
 db.myCollection1.find().forEach(function(doc) { print("Customer name: " + doc.firstName) });
+```
 
 
-
-- drop		delete the 'myCollection1' collection
+## drop		
+- delete the 'myCollection1' collection
+```js
 db.myCollection1.drop1()
-- NOTE:	rename 'drop1' to 'drop' if you really want to delete collection (drop1 existing eliminate accidental deletion)
-
+//NOTE:	rename 'drop1' to 'drop' if you really want to delete collection (drop1 existing eliminate accidental deletion)
 db.test.save( { a: 1} )
 db.test.find()
 
 - db.dropDatabase()
-
-aggregate() Method
+```
 
 ## Aggregation
 - process data records and return computed results group values from multiple documents together can perform a variety of operations on the grouped data to return a single result.

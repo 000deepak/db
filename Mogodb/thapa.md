@@ -25,22 +25,12 @@
   - Aggregation Operators and Expressions
   - Pipeline Stages ($match, $project, $group, $sort, $limit, $unwind, $filter, $skip, etc.)
 
-### PROJECTS
-- **Project 1**: Working with MongoDB Node.js Driver (How to perform CRUD operations in a real-life project)
-- **Project 2**: Working with Mongoose & Node.js
-
-## MONGODB ATLAS
-## MONGODB COMPASS
-
----
-
 # Introduction to MongoDB
 
 ## What is MongoDB?
 MongoDB is an open-source, document-oriented NoSQL database management system. Designed for flexibility, scalability, and performance in handling unstructured or semi-structured data.
 
 ### More About MongoDB
-**10gen**  
 It was created by a company called 10gen, which is now known as MongoDB, Inc. The company was founded by Eliot Horowitz and Dwight Merriman in 2007. The first version of MongoDB was released in 2009.
 
 ### Clusters in MongoDB
@@ -119,18 +109,9 @@ In MongoDB, a cluster refers to a group of interconnected servers (nodes) that w
 ]
 ```
 
-# MongoDB Data
-
-## Atlas Database
-
-### mongoShell & MongoDB Compass
-
----
-
 ## MongoDB Terminologies
 
 ### Database
-
 - Collections:
   - Students
   - Teachers
@@ -139,7 +120,6 @@ In MongoDB, a cluster refers to a group of interconnected servers (nodes) that w
 ### Schemaless
 
 #### Document Examples
-
 ```json
 {
   "name": "Vinod",
@@ -211,27 +191,6 @@ In MongoDB, a cluster refers to a group of interconnected servers (nodes) that w
 
 # How MongoDB Works?
 
-## Frontend
-
-- HTML, CSS, JS
-- React.js, Next.js
-
-## Backend
-
-- Node.js
-- Express.js
-- Next.js
-- Python
-
-## MongoDB Server
-
-### Database
-
-- Storage Engine
-  - WiredTiger
-  - MMAPV1 (❌)
-- Read & Write Data Files
-
 ## JSON vs BSON
 
 In MongoDB, we write in JSON format only, but behind the scenes, data is stored in BSON (Binary JSON) format, a binary representation of JSON.
@@ -280,14 +239,6 @@ scores\x00
 \x00\x00\x00\x00\x00\x00\x00\x00
 ```
 
-### Subscribe
-
-## Installing MongoDB
-
-- [MongoDB Community](https://www.mongodb.com/try/download/community)
-- [MongoDB Shell](https://www.mongodb.com/try/download/shell)
-- [MongoDB Database Tools](https://www.mongodb.com/try/download/database-tools)
-
 ## BSON in MongoDB
 
 ### Binary JSON Format
@@ -317,26 +268,27 @@ scores\x00
 
 ```shell
 show dbs;
+
 use <database-name>;
+
 db.dropDatabase();
+
 show collections;
+
 db.createCollection('<collection-name>');
+
 db.<collection-name>.drop();
 ```
 
 ## Insert Operation in MongoDB
-
 - Inserting Documents in MongoDB
 - When to use Quotes and when not to?
 - Ordered and Unordered Inserts
 - Case Sensitivity in MongoDB
 
-### Subscribe
-
 ## Inserting Documents in MongoDB
 
 ### InsertOne
-
 ```javascript
 db.<collection-name>.insertOne({
   field1: value1,
@@ -346,7 +298,6 @@ db.<collection-name>.insertOne({
 ```
 
 ### InsertMany
-
 ```javascript
 db.<collection-name>.insertMany([
   { field1: value1, field2: value2, /* ... */ },
@@ -355,7 +306,7 @@ db.<collection-name>.insertMany([
 ]);
 ```
 
-### MONGOD InsertOne
+### InsertOne
 
 #### Before
 
@@ -367,22 +318,21 @@ db.Students.insertOne({
 ```
 
 #### After
-
 ```javascript
 db.Students.insertOne({
   name: "Vinod",
   age: 29
 });
+
 db.Students.insertOne({
   name: "Binamra",
   age: 20
 });
 ```
 
-### MONGOD InsertMany
+### InsertMany
 
 #### Before
-
 ```javascript
 db.Students.insertMany([
   {
@@ -393,7 +343,6 @@ db.Students.insertMany([
 ```
 
 #### After
-
 ```javascript
 db.Students.insertMany([
   {
@@ -412,142 +361,25 @@ db.Students.insertMany([
 ```
 
 ## When to Use Quotes and When Not To?
-
 ### Special Characters
-
-If a field name contains special characters or spaces, or starts with a numeric digit, using quotes is necessary.
+- `If a field name contains special characters or spaces, or starts with a numeric digit, using quotes is necessary`.
 
 ### Reserved Words
-
-If a field name is a reserved keyword in MongoDB, use quotes to distinguish it from the reserved keyword.
+`If a field name is a reserved keyword in MongoDB, use quotes to distinguish it from the reserved keyword.`
 
 ## Ordered and Unordered Inserts
-
-When executing bulk write operations, "ordered" and "unordered" determine the batch behavior.
+`When executing bulk write operations, "ordered" and "unordered" determine the batch behavior.`
 
 ### Ordered Inserts
-
-Default behavior is ordered, where MongoDB stops on the first error.
-
+`Default behavior is ordered, where MongoDB stops on the first error`
 ```javascript
 db.<collection-name>.insertMany([ doc1, doc2, /* ... */ ]);
 ```
 
 ### Unordered Inserts
-
-When executing bulk write operations with unordered flag, MongoDB continues processing after encountering an error.
-
+`When executing bulk write operations with unordered flag, MongoDB continues processing after encountering an error.`
 ```javascript
 db.<collection-name>.insertMany([ doc1, doc2, /* ... */ ], { ordered: false });
-```
-
-
-## Inserting Documents in MongoDB
-
-### InsertOne
-
-```javascript
-db.<collection-name>.insertOne({
-  field1: value1,
-  field2: value2,
-  // ...
-});
-```
-
-### InsertMany
-
-```javascript
-db.<collection-name>.insertMany([
-  { field1: value1, field2: value2, /* ... */ },
-  { field1: value1, field2: value2, /* ... */ },
-  // ...
-]);
-```
-
-### MONGOD InsertOne
-
-#### Before
-
-```javascript
-db.Students.insertOne({
-  name: "Vinod",
-  age: 29
-});
-```
-
-#### After
-
-```javascript
-db.Students.insertOne({
-  name: "Vinod",
-  age: 29
-});
-db.Students.insertOne({
-  name: "Binamra",
-  age: 20
-});
-```
-
-### MONGOD InsertMany
-
-#### Before
-
-```javascript
-db.Students.insertMany([
-  {
-    name: "Vinod",
-    age: 29
-  }
-]);
-```
-
-#### After
-
-```javascript
-db.Students.insertMany([
-  {
-    name: "Vinod",
-    age: 29
-  },
-  {
-    name: "Binamra",
-    age: 20
-  },
-  {
-    name: "Thapa",
-    age: 21
-  }
-]);
-```
-
-## When to Use Quotes and When Not To?
-
-### Special Characters
-
-If a field name contains special characters or spaces, or starts with a numeric digit, using quotes is necessary.
-
-### Reserved Words
-
-If a field name is a reserved keyword in MongoDB, use quotes to distinguish it from the reserved keyword.
-
-## Ordered and Unordered Inserts
-
-When executing bulk write operations, "ordered" and "unordered" determine the batch behavior.
-
-### Ordered Inserts
-
-Documents before the one with an error will be inserted, but documents after the one with an error will not be inserted.
-
-```javascript
-db.<collection-name>.insertMany([ Correct Doc. 1, Wrong Doc. 2, Correct Doc. 3 ]);
-```
-
-### Unordered Inserts
-
-Documents before the one with an error will be inserted, and documents after the one with an error will also be inserted. Only the document with the error will not be inserted.
-
-```javascript
-db.<collection-name>.insertMany([ Correct Doc. 1, Wrong Doc. 2, Correct Doc. 3, Correct Doc. 4 ], { ordered: false });
 ```
 
 ## Case Sensitivity in MongoDB
@@ -560,7 +392,6 @@ db.product.insertOne({ name: 'thapa', age: 30 });
 ```
 
 ## Read Operations in MongoDB
-
 - Inserting Documents in MongoDB
 - Ordered and Unordered Inserts
 - Case Sensitivity in MongoDB
@@ -759,7 +590,6 @@ db.collectionName.updateOne(
 ```
 
 ## Updating Arrays and Embedded Documents
-
 ```javascript
 db.collectionName.updateOne(
   { filter },
@@ -785,9 +615,7 @@ db.sales.deleteMany({ price: 55 });
 ```
 
 ## MONGOD DELETEONE
-
 ### Before
-
 ```json
 [
   {
@@ -802,7 +630,6 @@ db.sales.deleteMany({ price: 55 });
 ```
 
 ### DeleteOne
-
 ```javascript
 db.Students.deleteOne({
   name: "Binamra"
@@ -810,7 +637,6 @@ db.Students.deleteOne({
 ```
 
 ### After
-
 ```json
 [
   {
@@ -821,13 +647,10 @@ db.Students.deleteOne({
 ```
 
 ## Indexes in MongoDB
-
 ### What are Indexes?
-
 Indexes are specialized data structures that optimize data retrieval speed in MongoDB. They store a fraction of data in a more searchable format, enabling MongoDB to locate data faster during queries. Indexes are separate from collections, and multiple indexes can exist per collection.
 
 ### Benefits of Indexes
-
 Indexes provide several benefits:
 - Faster query performance
 - Efficient data retrieval
@@ -836,18 +659,15 @@ Indexes provide several benefits:
 - Enable text search capabilities
 
 ### Managing Indexes
-
 In MongoDB, indexes can be managed using commands like `createIndex`, `dropIndex`, and `listIndexes`. Proper management ensures optimal query performance and storage efficiency.
 
 ### Types of Indexes
-
 MongoDB supports various types of indexes:
 - **Unique Index:** Ensures that the indexed field has unique values across the collection.
 - **Text Index:** Enables text search capabilities on string content.
 - **Compound Index:** Indexes multiple fields together to support queries that match on multiple fields.
 
 ### When Not to Use Indexes?
-
 While indexes improve query performance, they also come with overhead:
 - **Small Collections:** In small collections or databases with limited data, indexes may not provide significant benefits and can consume unnecessary resources.
 - **Frequent Write Operations:** Indexes can slow down write operations (inserts, updates, deletes) as they need to be updated whenever the indexed fields change.
@@ -857,7 +677,6 @@ Consider the trade-offs between query performance improvements and resource util
 
 
 ## Benefits of Indexes
-
 - **Faster Querying:** Indexes drastically accelerate data retrieval, particularly for large collections.
 - **Efficient Sorting:** Indexes facilitate rapid sorting based on specific fields.
 - **Improved Aggregation:** Aggregation operations become more efficient with optimized indexes.
@@ -894,14 +713,8 @@ db.collection.dropIndex(“index_name”);
 
 ```
 
-                                                                                          
-                                                                                      
-
-
-
 ## Unique and Text Indexes
 ```js
-
 db.collection.createIndex({ field: 1 }, { unique: true });
 
 db.collection.createIndex({ field: "text" });
@@ -914,33 +727,24 @@ db.products.find({ field: { $regex: "air" } })
 ```
 
 ## When not to use Indexes?
-
 ### Indexes on Rarely Used Fields
-
 - Indexing fields that are seldom used in queries can consume unnecessary space and resources.
 
 ### Balancing Act
-
 - Indexing requires disk space and memory. Overindexing can lead to resource strain and impact overall performance.
 
 ### Indexing Small Collections
-
 - In smaller collections, the cost of index maintenance might outweigh the benefits gained from querying.
 
-## Aggregation in MongoDB
-
+# Aggregation in MongoDB
 ### What is Aggregation?
-
 **Definition:** Aggregation is the process of performing transformations on documents and combining them to produce computed results.
-
 **Pipeline Stages:** Aggregations consist of multiple pipeline stages, each performing a specific operation on the input data.
 
 ### Benefits
-
 - **Aggregating Data:** Complex calculations and operations are possible.
 - **Advanced Transformations:** Data can be combined, reshaped, and computed for insights.
 - **Efficient Processing:** Aggregation handles large datasets efficiently.
-
 
 ### $match
 ```js
@@ -964,7 +768,6 @@ $group:
 {
 _id: <expression>, // Group key
 <field1>: { <accumulator1> : <expression1> },
-...
 }
 }
 
@@ -979,11 +782,8 @@ _id: { comp: "$company" },
 totalPrice: { $sum: "$price" },
 totalProducts: { $sum: 1 },
 averagePrice:     { $avg: "$price" }
-
-} }
-
+}}
 ]);
-
 ```
 
 ### $sort
@@ -1063,69 +863,48 @@ db.products.aggregate([
 
 ### $filter
 ```js
-
 The $řilter stage řilters elements oř an array based on speciřied conditions.
 
-{
 $project: {
-<field>: {
-$filter: {
-input: '$<array>’,
-as: '<variable>’
-cond: <expression>
+  <field>: {
+    $filter: {
+      input: '$<array>’,
+      as: '<variable>’
+      cond: <expression>
+    }
+  }
 }
-}
-}
-}
-
 ```
                          
 ### $addFields
 ```js
-
 The $addFields stage adds new řields to documents in a cleaner way compared to $project.
-
 { $addFields: { <field1>: <expression1>, ... } }
-
 db.products.aggregate([
-
 { $addFields: { discountedPrice: { $subtract: ["$price", 5] } } }
-
 ]);
 
 ```
 
 ## Introduction to MongoDB Atlas
-
 MongoDB Atlas is MongoDB's fully managed cloud database service. It offers an easy way to deploy, manage, and scale MongoDB databases in the cloud. Atlas eliminates the need for manual setup and maintenance, allowing developers to focus on their applications. It provides automated scaling options to accommodate growing workloads. Atlas supports global clusters, enabling databases to be deployed across multiple regions for better data availability and reduced latency.
 
-## MongoDB Atlas Setup
-
-[Link to MongoDB Atlas Setup Documentation](https://www.mongodb.com/cloud/atlas)
-
 ## Working with MongoDB Compass
-
 MongoDB Compass is a graphical user interface (GUI) for MongoDB. It provides a visual way to explore and interact with MongoDB databases, making it easier to view data, run queries, and perform administrative tasks.
 
 ## Working with MongoDB Drivers
-
 ### Introduction to MongoDB Drivers
-
-MongoDB drivers are software libraries that allow applications to interact with MongoDB databases. MongoDB offers official and community-supported drivers for various programming languages. Drivers provide APIs tailored to specific programming languages.
+- MongoDB drivers are software libraries that allow applications to interact with MongoDB databases. MongoDB offers official and community-supported drivers for various programming languages. Drivers provide APIs tailored to specific programming languages.
 
 ### Working with Node.js MongoDB Drivers
-
-For Node.js applications, MongoDB offers an official driver that provides a native Node.js interface to MongoDB. It allows Node.js developers to connect to MongoDB, execute queries, and manage data using JavaScript.
-
-For more detailed information about MongoDB drivers, refer to the [MongoDB Drivers Documentation](https://www.mongodb.com/docs/drivers/).
+- For Node.js applications, MongoDB offers an official driver that provides a native Node.js interface to MongoDB. It allows Node.js developers to connect to MongoDB, execute queries, and manage data using JavaScript.
+- For more detailed information about MongoDB drivers, refer to the [MongoDB Drivers Documentation](https://www.mongodb.com/docs/drivers/).
 
 
 ## Getting Started with Node.js MongoDB Driver
-
 MongoDB Node.js Driver is a direct interface to MongoDB, providing a native way to interact with MongoDB databases from Node.js applications.
 
 ### Why Mongoose instead of the official driver?
-
 Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js, offering several advantages over the official MongoDB driver:
 
 - **Structured Schemas**:

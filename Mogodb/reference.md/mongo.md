@@ -52,19 +52,7 @@
 - Grant permission to DB/Collection
 
 
-# shell commands
-- Run the below at command prompt/ terminal
-```shell
-cmd
-```
 
-- start mongo client
-```shell
-mongo
-
-db.stats();
-db.help();
-```
 
 ## db        
 - always means currently selected db

@@ -79,3 +79,16 @@
 | **inactive**          |         | mongojs query analyzer           | -                  | [dbspecific/mongodb_client](https://www.aquafold.com/dbspecific/mongodb_client) | -                                                                                                |
 |                    |         | mongovue                         | -                  | [mongovue](http://www.mongovue.com)                        | -                                                                                                |
 
+# shell commands
+- Run the below at command prompt/ terminal
+```shell
+cmd
+```
+
+- start mongo client
+```shell
+mongo
+
+db.stats();
+db.help();
+```

@@ -45,11 +45,11 @@
 - Cursors
 
 ## Users
-  - Grant access to DB
-  - Grant access to DB/Collection
-  - Grant roles
-  - Grant permission to DB
-  - Grant permission to DB/Collection
+- Grant access to DB
+- Grant access to DB/Collection
+- Grant roles
+- Grant permission to DB
+- Grant permission to DB/Collection
 
 
 # shell commands

@@ -1,5 +1,4 @@
 # MongoDB Course Content
-
 - Getting started with MongoDB
 - Execution of a JavaScript file in MongoDB
 - Making the output of find readable in shell
@@ -15,47 +14,57 @@
   - Update of embedded documents
   - More update operators
   - “multi” Parameter while updating multiple documents
+
+## db  
 - Getting database information
-- List all collections in the database
 - List all databases
+
+## collection
+- List all collections in the database
+- Create a Collection
+- Drop Collection
+
+## read
 - Querying for Data (Getting Started)
   - Find()
   - FindOne()
   - Limit, skip, sort, and count the results of the find() method
 - Query Document – Using AND, OR, and IN Conditions
 - find() method with Projection
+
+## update
 - Update Operators
   - $set operator to update specified field(s) in document(s)
 - Upserts and Inserts
   - Insert a document
-- Collections
-  - Create a Collection
-  - Drop Collection
-- Aggregation
-  - Count
-  - Sum
-  - Average
-  - Operations with arrays
-  - Aggregate query examples useful for work and learning
-  - Match
-  - Get sample data
-  - Remove docs that have a duplicate field in a collection (dedupe)
-  - Left Outer Join with aggregation ($Lookup)
-- Server Aggregation
-  - Aggregation in a Server Method
-- Java and Spring example
-- Indexes
-  - Index Creation Basics
-  - Dropping/Deleting an Index
-  - Sparse indexes and Partial indexes
-  - Get Indices of a Collection
-  - Compound
-  - Unique Index
-  - Single field
-  - Delete
-  - List
-- Bulk Operations
-  - Converting a field to another type and updating the entire collection in Bulk
+
+## Aggregation
+- Count
+- Sum
+- Average
+- Operations with arrays
+- Aggregate query examples useful for work and learning
+- Match
+- Get sample data
+- Remove docs that have a duplicate field in a collection (dedupe)
+- Left Outer Join with aggregation ($Lookup)
+
+## Server Aggregation
+- Aggregation in a Server Method
+
+## Indexes
+- Index Creation Basics
+- Dropping/Deleting an Index
+- Sparse indexes and Partial indexes
+- Get Indices of a Collection
+- Compound
+- Unique Index
+- Single field
+- Delete
+- List
+
+## Bulk Operations
+- Converting a field to another type and updating the entire collection in Bulk
 
 
 

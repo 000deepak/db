@@ -1,7 +1,7 @@
 ## Inner Join with duplicates
 An INNER JOIN combines rows from two tables where there is a match in the joined column.
 In our case, we’re joining TABLE_A and TABLE_B using the id column.
-<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/1.webp" />
+<img width="620" height="334" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/1.webp" />
 
 If a value in id exists in both tables, it is included in the result.
 If it appears multiple times, it forms all combinations between matches.
@@ -14,7 +14,7 @@ So, the result shows all matched rows based on common values in both tables.
 This is how INNER JOIN works — it returns only the matching rows, and duplicates increase the number of results by forming combinations.
 
 ## INNER JOIN WITH NULLS
-<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/2.webp" />
+<img width="620" height="334" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/2.webp" />
 An INNER JOIN returns only the rows where both tables have the same non-null value in the joined column.
 
 5, 6, and 8 are present in both tables → they are shown in the result just as before
@@ -24,7 +24,7 @@ NOTE :- NULL is in both tables → not matched, because:
 🚩 In SQL, NULL = NULL is false. NULL values are never considered equal in joins.
 
 ## LEFT JOIN WITH DUPLICATES
-<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/3.webp" />
+<img width="620" height="334" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/3.webp" />
 
 A LEFT JOIN keeps all rows from the left table (TABLE A).
 
@@ -52,7 +52,7 @@ TABLE A has one row with id = 6 TABLE B has two rows with id = 6.
 So, the one row from TABLE A will match both rows from TABLE B.
 
 ## LEFT JOIN WITH NULLS
-<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/4.webp" />
+<img width="620" height="334" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/4.webp" />
 
 For each value in TABLE A, SQL checks TABLE B:
 5: Appears twice in A, once in B → 2 rows in result

@@ -1,3 +1,5 @@
+syllabus : https://roadmap.sh/mongodb
+
 # MongoDB Course Content
 - Getting started with MongoDB
 - Execution of a JavaScript file in MongoDB

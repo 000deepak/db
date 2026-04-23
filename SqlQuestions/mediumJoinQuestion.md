@@ -93,7 +93,7 @@ So, if a row in TABLE B has NULL, you'll see:
 NULL | NULL as many rows as you had Nulls in the Table B
 
 ## FULL OUTER JOIN WITH DUPLICATES
-<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/7.webp" />
+<img width="620" height="434" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/7.webp" />
 A FULL OUTER JOIN returns:
 
 All rows from both tables.
@@ -107,7 +107,7 @@ FULL JOIN helps find unmatched records from both sides.
 9 → only in B → a.id = NULL
 
 ## FULL OUTER JOIN WITH NULLS
-<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/8.webp" />
+<img width="620" height="434" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/8.webp" />
 
 Press enter or click to view image in full size
 
@@ -129,7 +129,7 @@ Each NULL in A and each NULL in B are treated separately.
 e.g., 1 NULL in A × 2NULL in B → 1 unmatched A row + 2 unmatched B row = 3 NULL | NULL lines .
 
 ## SELF JOIN WITH DUPLICATES
-<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/9.webp" />
+<img width="620" height="434" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/9.webp" />
 
 5 → appears 2 times → 2 × 2 = 4 combinations
 6 → 1 time → 1 × 1 = 1 combination

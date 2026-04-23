@@ -65,7 +65,7 @@ The result will show: NULL | NULL
 — because there’s no match, but LEFT JOIN still keeps the left row.
 
 # RIGHT JOIN WITH DUPLICATES
-<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/5.webp" />
+<img width="620" height="334" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/5.webp" />
 
 Press enter or click to view image in full size
 
@@ -80,7 +80,7 @@ If no match in the left table → show NULL for the left side.
 9 → only in B, not in A → NULL from A
 
 ## RIGHT JOIN WITH NULL
-<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/6.webp" />
+<img width="620" height="334" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/6.webp" />
 
 5 in A × 5 in B → 2 rows
 6 in A × 2 6s in B → 2 rows

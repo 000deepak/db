@@ -1,6 +1,4 @@
-Inner Join with duplicates
-Press enter or click to view image in full size
-
+## Inner Join with duplicates
 An INNER JOIN combines rows from two tables where there is a match in the joined column.
 In our case, we’re joining TABLE_A and TABLE_B using the id column.
 <img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/1.webp" />
@@ -15,9 +13,8 @@ So, the result shows all matched rows based on common values in both tables.
 
 This is how INNER JOIN works — it returns only the matching rows, and duplicates increase the number of results by forming combinations.
 
-INNER JOIN WITH NULLS
-Press enter or click to view image in full size
-
+## INNER JOIN WITH NULLS
+<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/2.webp" />
 An INNER JOIN returns only the rows where both tables have the same non-null value in the joined column.
 
 5, 6, and 8 are present in both tables → they are shown in the result just as before
@@ -26,8 +23,8 @@ NOTE :- NULL is in both tables → not matched, because:
 
 🚩 In SQL, NULL = NULL is false. NULL values are never considered equal in joins.
 
-LEFT JOIN WITH DUPLICATES
-Press enter or click to view image in full size
+## LEFT JOIN WITH DUPLICATES
+<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/3.webp" />
 
 A LEFT JOIN keeps all rows from the left table (TABLE A).
 
@@ -54,18 +51,8 @@ TABLE A has one row with id = 6 TABLE B has two rows with id = 6.
 
 So, the one row from TABLE A will match both rows from TABLE B.
 
-Get Vanshika Mishraa’s stories in your inbox
-Join Medium for free to get updates from this writer.
-
-Enter your email
-Subscribe
-
-Remember me for faster sign in
-
-That’s why you get two rows in the result
-
-LEFT JOIN WITH NULLS
-Press enter or click to view image in full size
+## LEFT JOIN WITH NULLS
+<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/4.webp" />
 
 For each value in TABLE A, SQL checks TABLE B:
 5: Appears twice in A, once in B → 2 rows in result
@@ -76,7 +63,10 @@ For each value in TABLE A, SQL checks TABLE B:
 
 The result will show: NULL | NULL
 — because there’s no match, but LEFT JOIN still keeps the left row.
-RIGHT JOIN WITH DUPLICATES
+
+# RIGHT JOIN WITH DUPLICATES
+<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/5.webp" />
+
 Press enter or click to view image in full size
 
 A RIGHT JOIN keeps all rows from the right table (TABLE_B), and adds matching rows from the left table (TABLE_A).
@@ -88,8 +78,9 @@ If no match in the left table → show NULL for the left side.
 6 → 1 time in A, 2 in B → 2 rows
 8 → 2 times in A, 1 in B → 2 rows
 9 → only in B, not in A → NULL from A
-RIGHT JOIN WITH NULL
-Press enter or click to view image in full size
+
+## RIGHT JOIN WITH NULL
+<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/6.webp" />
 
 5 in A × 5 in B → 2 rows
 6 in A × 2 6s in B → 2 rows
@@ -101,9 +92,8 @@ Even if both sides have NULL, they will not match during JOINs.
 So, if a row in TABLE B has NULL, you'll see:
 NULL | NULL as many rows as you had Nulls in the Table B
 
-FULL OUTER JOIN WITH DUPLICATES
-Press enter or click to view image in full size
-
+## FULL OUTER JOIN WITH DUPLICATES
+<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/7.webp" />
 A FULL OUTER JOIN returns:
 
 All rows from both tables.
@@ -115,7 +105,10 @@ FULL JOIN helps find unmatched records from both sides.
 8 → 2 in A × 1 in B → 2 rows
 7 → only in A → b.id = NULL
 9 → only in B → a.id = NULL
-FULL OUTER JOIN WITH NULLS
+
+## FULL OUTER JOIN WITH NULLS
+<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/8.webp" />
+
 Press enter or click to view image in full size
 
 A FULL OUTER JOIN returns:
@@ -134,8 +127,9 @@ NULL in A and B → doesn't match → results in multiple NULL | NULL rows becau
 In SQL, NULL ≠ NULL, so they don't match in joins.
 Each NULL in A and each NULL in B are treated separately.
 e.g., 1 NULL in A × 2NULL in B → 1 unmatched A row + 2 unmatched B row = 3 NULL | NULL lines .
-SELF JOIN WITH DUPLICATES
-Press enter or click to view image in full size
+
+## SELF JOIN WITH DUPLICATES
+<img width="620" height="234" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/9.webp" />
 
 5 → appears 2 times → 2 × 2 = 4 combinations
 6 → 1 time → 1 × 1 = 1 combination
@@ -169,4 +163,3 @@ Some additional exercises —
 
 → Add one more column with Nulls and Duplicates and see how they give results.
 
-Doing these exercises will completely clear the concept of Joins in SQL.

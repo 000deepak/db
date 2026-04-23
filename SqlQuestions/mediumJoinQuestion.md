@@ -3,7 +3,7 @@ Press enter or click to view image in full size
 
 An INNER JOIN combines rows from two tables where there is a match in the joined column.
 In our case, we’re joining TABLE_A and TABLE_B using the id column.
-<img width="820" height="334" alt="image" src="https://github.com/user-attachments/assets/fb54b2df-1905-4815-8e02-6ff10a163586" />
+<img width="820" height="334" alt="image" src="https://github.com/000deepak/db/blob/master/SqlQuestions/joinImages/1.webp" />
 
 If a value in id exists in both tables, it is included in the result.
 If it appears multiple times, it forms all combinations between matches.

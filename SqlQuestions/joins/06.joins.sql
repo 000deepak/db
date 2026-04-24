@@ -1,11 +1,6 @@
 -- Create tables
-CREATE TABLE it.AlljoinsA (
-                              cola INT
-);
-
-CREATE TABLE it.AlljoinsB (
-                              colb INT
-);
+CREATE TABLE it.AlljoinsA (cola INT);
+CREATE TABLE it.AlljoinsB (colb INT);
 
 -- Insert data into AlljoinsA
 INSERT INTO it.AlljoinsA VALUES (1);

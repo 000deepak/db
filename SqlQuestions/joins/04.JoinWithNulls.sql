@@ -8,31 +8,12 @@ DROP TABLE IF EXISTS t7;
 DROP TABLE IF EXISTS t8;
 
 -- Step 1: Create tables
-CREATE TABLE t7 (
-                    id INT
-);
-
-CREATE TABLE t8 (
-                    id INT
-);
+CREATE TABLE t7 (id INT);
+CREATE TABLE t8 (id INT);
 
 -- Step 2: Insert data
-INSERT INTO t7 (id) VALUES
-                        (1),
-                        (1),
-                        (2),
-                        (2),
-                        (4),
-                        (NULL);
-
-INSERT INTO t8 (id) VALUES
-                        (1),
-                        (1),
-                        (1),
-                        (3),
-                        (2),
-                        (2),
-                        (NULL);
+INSERT INTO t7 (id) VALUES(1),(1),(2),(2),(4),(NULL);
+INSERT INTO t8 (id) VALUES(1),(1),(1),(3),(2),(2),(NULL);
 
 -- Step 3: View data
 SELECT 'Table t7' AS info;

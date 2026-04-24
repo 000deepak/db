@@ -4,13 +4,8 @@
 USE em;
 
 -- Create tables
-CREATE TABLE Join_Table1 (
-                             id INT
-);
-
-CREATE TABLE Join_Table2 (
-                             id INT
-);
+CREATE TABLE Join_Table1 (id INT);
+CREATE TABLE Join_Table2 (id INT);
 
 -- Insert data into Join_Table1
 INSERT INTO Join_Table1 VALUES (1);

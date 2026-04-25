@@ -107,10 +107,6 @@ WHERE employee_id = (
 -- =========================================
 -- AGGREGATION & GROUPING
 -- =========================================
--- ============================================
--- 1. BASIC QUERIES
--- ============================================
-
 -- Count employees in Admin department
 SELECT COUNT(*) AS admin_count
 FROM employee
@@ -126,20 +122,6 @@ SELECT department, COUNT(*) AS employee_count
 FROM employee
 GROUP BY department
 ORDER BY employee_count DESC;
-
-
--- Departments with number of employees (ascending)
-SELECT department, COUNT(*) AS employee_count
-FROM employee
-GROUP BY department
-ORDER BY employee_count;
-
-
--- Show all departments with number of employees
-SELECT department, COUNT(*) AS employee_count
-FROM Worker
-GROUP BY department;
-
 
 -- Departments with less than 4 employees
 SELECT department, COUNT(*) AS employee_count
@@ -157,30 +139,12 @@ SELECT department, MAX(salary) AS max_salary
 FROM Worker
 GROUP BY department;
 
-
--- Total salary by department
-SELECT department, SUM(salary) AS total_salary
-FROM employee
-GROUP BY department
-ORDER BY total_salary;
-
-
 -- Total salaries per department (descending)
 SELECT department, SUM(salary) AS total_salary
 FROM Worker
 GROUP BY department
 ORDER BY total_salary DESC;
 
-
--- Maximum salary from each department
-SELECT department_id, MAX(salary) AS max_salary
-FROM empt
-GROUP BY department_id;
-
-
--- ============================================
--- 4. HAVING CLAUSE (FILTER AFTER AGGREGATION)
--- ============================================
 
 -- Departments with average salary > 9500
 SELECT department_id,
@@ -290,11 +254,6 @@ WHERE e.salary > (
     FROM empm
     WHERE emp_id = e.manager_id
 );
-
--- Employees with same salary
-SELECT * FROM
-             Worker as w1 , Worker as w2
-WHERE w1.salary = w2.salary;
 
 -- Find manager name for each employee
 SELECT e.emp_id, e.emp_name, m.emp_name

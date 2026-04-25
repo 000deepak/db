@@ -14,8 +14,15 @@ FROM employee
 ORDER BY salary DESC
     LIMIT 2, 1;
 
-(select * from employee order by employee_id desc limit 5)
-order by employee_id;
+-- using subquery
+SELECT *
+FROM employee
+WHERE salary = (
+    SELECT DISTINCT salary
+    FROM employee
+    ORDER BY salary DESC
+    LIMIT 1 OFFSET 4
+);
 
 -- =========================================
 -- STEP 3: NTH HIGHEST SALARY (SUBQUERY METHOD)

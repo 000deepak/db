@@ -56,6 +56,9 @@ WHERE salary = (
     SELECT MAX(salary) FROM employee
 );
 
+--THIS WONT WORK 
+SELECT emp.name, MAX(salary) FROM employee emp;
+
 -- =========================================
 -- STEP 6: HIGHEST SALARY PER DEPARTMENT
 -- =========================================

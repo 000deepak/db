@@ -309,34 +309,13 @@ HAVING COUNT(*) > 1;
 
 -- ============================================
 -- 2. DELETE DUPLICATES (SAFE METHOD)
--- Using ROW_NUMBER (Recommended)
 -- ============================================
-
--- 2.1 Remove duplicates based on emp_id
-WITH cte AS (
-    SELECT *,
-           ROW_NUMBER() OVER (
-               PARTITION BY emp_id
-               ORDER BY emp_id
-           ) AS rn
-    FROM empt
-)
-DELETE FROM cte
-WHERE rn > 1;
-
-
--- 2.2 Remove duplicates based on emp_name + salary
-WITH cte AS (
-    SELECT emp_name,
-           salary,
-           ROW_NUMBER() OVER (
-               PARTITION BY emp_name, salary
-               ORDER BY emp_name, salary
-           ) AS rn
-    FROM empt
-)
-DELETE FROM cte
-WHERE rn > 1;
+```sql
+DELETE t1 
+FROM your_table t1
+JOIN your_table t2 ON t1.id > t2.id
+AND t1.column_name = t2.column_name;
+``` 
 
 ------------------------------other
 
